@@ -1,43 +1,15 @@
 // Create a function to determine whether string is a palindrome:
-// a word, phrase, or sequence that reads the same backward as forward
+// a word or phrase that reads the same backward as forward
 
-let alphabet = {
-  a:'a',
-  b:'b',
-  c:'c',
-  d:'d',
-  e:'e',
-  f:'f',
-  g:'g',
-  h:'h',
-  i:'i',
-  j:'j',
-  k:'k',
-  l:'l',
-  m:'m',
-  n:'n',
-  o:'o',
-  p:'p',
-  q:'q',
-  r:'r',
-  s:'s',
-  t:'t',
-  u:'u',
-  v:'v',
-  w:'w',
-  x:'x',
-  y:'y',
-  z:'z',
+const isPalendrome = (string) => {
+  if (string.length <= 1) {
+    console.log(true)
+  } else if (string[0] === string[string.length - 1]) {
+    const newString = string.slice(1, string.length - 1)
+    isPalendrome(newString)
+  } else {
+    console.log(false)
+  }
 }
 
-const isPalindrome = (sentence) => {
-  let validCharacters = []
-  const splitSentence = sentence.split('')
-  splitSentence.forEach(letter => {
-    if (letter === alphabet[letter]) {
-      validCharacters.push(letter)
-    }
-  })
-}
-
-isPalindrome('howdy')
+isPalendrome('21racecar12')
